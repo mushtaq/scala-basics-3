@@ -39,16 +39,16 @@ def map3(xs: Seq[Int], f: Int => Int): Seq[Int] = {
     }
   }
 
-  lazy val loop1: (Seq[Int], Seq[Int]) => Seq[Int] = { (remaining, acc) =>
-    if(remaining.isEmpty)
-      acc
-    else {
-      val newAcc =  acc :+ f(remaining.head)
-      loop1(remaining.tail, newAcc)
-    }
-  }
+//  lazy val loop1: (Seq[Int], Seq[Int]) => Seq[Int] = { (remaining, acc) =>
+//    if(remaining.isEmpty)
+//      acc
+//    else {
+//      val newAcc =  acc :+ f(remaining.head)
+//      loop1(remaining.tail, newAcc)
+//    }
+//  }
 
-  loop1(xs, Seq.empty)
+  loop(xs, Seq.empty)
 }
 
 def square(a: Int) = a * a
