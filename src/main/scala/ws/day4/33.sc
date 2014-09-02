@@ -9,3 +9,8 @@ books.sortBy(b =>(b.basePrice, b.title.reverseOrder)) foreach println
 //) foreach println
 //
 //
+for {
+  a ← Seq(1, 2, 3)
+} yield a -> 3
+
+println("a")
