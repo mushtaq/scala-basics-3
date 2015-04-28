@@ -8,6 +8,7 @@ object ExtMeths {
   case class Reversable[T](value: T)
   
   object Reversable {
-    implicit def reverseOrdering[T: Ordering]: Ordering[Reversable[T]] = Ordering[T].reverse.on(_.value)
+    implicit def reverseOrdering[T: Ordering]: Ordering[Reversable[T]] =
+      Ordering[T].reverse.on(_.value)
   }
 }

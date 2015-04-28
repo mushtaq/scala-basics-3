@@ -5,14 +5,18 @@
         "parts": [
             {
                 "description": "good[BM] part [BM]",
-                "bookmarks": ["one", "two", "abc", "xyz"],
-                "part": {
-                    "innerA": "Inner1[BM] bookmark",
-                    "innerB": "Inner2[BM] bookmark"
+                "bookmarks": ["4", "5", "6", "7", "8", "9"],
+                "part1": {
+                    "innerA": "Inner[BM] bookmark",
+                    "innerB": "Inner[BM] bookmark"
+                },
+                "part2": {
+                    "innerA": "Inner[BM] bookmark",
+                    "innerB": "Inner[BM] bookmark"
                 },
                 "instruction": "good part [BM]"
             }
         ],
-        "bookmarks": ["titleBM", "nameBM"]
+        "bookmarks": ["1", "2", "3"]
     }
 }

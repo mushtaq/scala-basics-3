@@ -1,20 +1,25 @@
+import data.Book
+import play.api.libs.json._
 
-def m(a: Any) = a match {
-  case Seq() => 0
-  case Seq(1, 2, x) => x
-  case 1 => 1
-  case 2 => 2
-  case s @ "aaa" => s.length
-  case x: String => x.length + 10
-  case (1, "aa") => 1 + 20
-  case (1, x: String) if x.length > 3 =>
-    1 + x.length
-  case t @ (1, x: String) if x.length > 1 => n(t)
-  case (1, t@(4, x)) => t
-  case (1, x) => 1 + x.toString
-  case x => "error"
+1
+
+val json = Json.arr(1, 2, 3, 4)
+
+implicit val aa = new Reads[Int] {
+  def reads(json: JsValue): JsResult[Int] = json match {
+    case JsNumber(n) ⇒ JsSuccess(n.toInt + 100)
+    case _ ⇒ JsError("can only read numbers in ints")
+  }
 }
 
-def n(t: (Int, String)) = t
+json.as[Seq[Int]]
 
-m("asdasdasdadasd")
+Json.reads
+
+
+Ordering[Book]
+
+
+
+
+
